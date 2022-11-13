@@ -354,7 +354,7 @@ botonInicio.addEventListener("click", (e) => {
         contenedorInicioRegistro.className = "contenedorInactivo"
         contenedorWallet.className = "contenedorWallet animate__animated animate__fadeInLeftBig"
         tipoCuenta.innerText = "(AR$)"
-        cerrarSesion.className="dropdown-item"
+        cerrarSesion.className = "dropdown-item"
 
 
     } else {
@@ -572,7 +572,7 @@ cerrarSesion.addEventListener("click", () => {
                 'Hecho!',
                 'Nos Vemos Pronto!.',
             )
-            cerrarSesion.className="contenedorInactivo"
+            cerrarSesion.className = "contenedorInactivo"
         }
     })
 
