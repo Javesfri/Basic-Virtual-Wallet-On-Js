@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #efefef;
+  height: 100px;
+}
+
+.logo {
+  height: auto;
+  width: 150px;
+}
+
+.bars {
+  color: #0052cc;
+  font-size: 25px;
+}
+
+.canvas {
+  background-color: #efefef;
+  color: #0052cc;
+}
+.canvas ul li a {
+  color: #0052cc !important;
+}
+
+.dropMenu {
+  background-color: #efefef;
+}
+
+.contenedorInicioRegistro {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-image: url("../multimedia/inicio.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorInicioSesion, .contenedorRegistroSesionActive, .contenedorRegistroSesionInactivo, .contenedorRegistroSesion {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.452);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.contenedorSesionIniciada {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  padding-bottom: 30px;
+}
+.contenedorSesionIniciada p {
+  font-size: 3em;
+}
+.contenedorSesionIniciada p span {
+  /*font-size: 1em;*/
+}
+.contenedorSesionIniciada a {
+  padding: 1em;
+  margin-top: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+.contenedorSesionIniciada a:hover {
+  background-color: #FB0C06;
+  box-shadow: 0px 15px 20px #a80300;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.contenedorSesionIniciadaInactivo {
+  display: none;
+}
+
+.contenedorInicioSesionInactivo {
+  display: none;
+}
+
+.contenedorInactivo {
+  display: none;
+}
+
+.contenedorRegistroSesionInactivo {
+  justify-content: space-evenly;
+  background-color: rgba(239, 239, 239, 0.6509803922);
+  background-image: url("../multimedia/fondoRegistro.png");
+  background-size: cover;
+}
+.contenedorRegistroSesionInactivo img {
+  width: 50%;
+}
+.contenedorRegistroSesionInactivo p {
+  font-size: 25px;
+  color: white;
+}
+.contenedorRegistroSesionInactivo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorRegistroSesionActive {
+  display: flex;
+}
+
+.contenedorFormulario {
+  width: 50%;
+  background-color: rgba(239, 239, 239, 0.6509803922);
+  height: 50%;
+  box-sizing: border-box;
+}
+
+.contenedorTituloSesion {
+  font-size: 30px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px;
+  background-color: #0052cc;
+  color: aliceblue;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+}
+
+.contenedorLabelInput {
+  width: 50%;
+}
+.contenedorLabelInput label {
+  color: #172b4d;
+}
+.contenedorLabelInput input {
+  width: 100%;
+  color: #172b4d;
+  background-color: rgba(240, 248, 255, 0.336);
+  border: none;
+  border-radius: 10rem;
+  margin: auto;
+}
+.contenedorLabelInput input:focus {
+  color: #172b4d;
+  background-color: rgba(240, 248, 255, 0.336);
+  border: 2px solid #0052cc;
+  box-shadow: none;
+}
+
+.botonIniciarRegistrarse, .botonInicioRegistro, .acciones button, .botonAcciones {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  border: none;
+  color: #0052cc;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.botonIniciarRegistrarse:after, .botonInicioRegistro:after, .acciones button:after, .botonAcciones:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.botonIniciarRegistrarse:before, .botonInicioRegistro:before, .acciones button:before, .botonAcciones:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #d9d9d9;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.botonIniciarRegistrarse:hover, .botonInicioRegistro:hover, .acciones button:hover, .botonAcciones:hover {
+  color: #172b4d;
+}
+.botonIniciarRegistrarse:hover:before, .botonInicioRegistro:hover:before, .acciones button:hover:before, .botonAcciones:hover:before {
+  width: 100%;
+}
+
+.botonInicioRegistro, .acciones button, .botonAcciones {
+  text-transform: capitalize;
+  letter-spacing: normal;
+  padding: 7px 1.25rem;
+  margin-top: 20px;
+}
+.botonInicioRegistro:before, .acciones button:before, .botonAcciones:before {
+  background-color: #0052cc;
+}
+.botonInicioRegistro:hover, .acciones button:hover, .botonAcciones:hover {
+  color: #efefef;
+}
+
+.contenedor, .contenedorWallet {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.contenedorWallet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ddd;
+  padding: 15px;
+}
+
+.contenedorUsuario {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.61);
+  padding-bottom: 10px;
+}
+.contenedorUsuario img {
+  height: 100%;
+  width: auto;
+  margin-right: 5px;
+}
+.contenedorUsuario p {
+  margin: 0px;
+  font-weight: bold;
+}
+
+.contenedorOpciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  height: 40%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.61);
+}
+
+.contenedorOpcion {
+  width: 90%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+}
+.contenedorOpcion button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 20px;
+  background-color: #ddd;
+  border: none;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+.contenedorOpcion button:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+
+.iconoOpcion {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.wallet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  height: 100%;
+  padding: 30px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+}
+
+.contenedorSaldoAcciones, .contenedorMovimientosInversiones {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 50%;
+  border: 2px solid black;
+}
+
+.contenedorSaldo, .contenedorMovimientos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+}
+
+.saldo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.saldo p {
+  font-size: 4em;
+  color: #172b4d;
+  text-shadow: 2px 1px 0px #7A7A7A;
+}
+
+.pesosDolares button {
+  transition: all 0.3s;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.botonSeleccionado {
+  transition: all 0.3s;
+  border-color: #0052cc !important;
+  transform: scale(1.1);
+}
+
+.botonAcciones {
+  background-color: #030d4f;
+  width: 25%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.botonAcciones:hover {
+  background-color: rgba(3, 13, 79, 0.7607843137);
+  color: aliceblue;
+  border-color: #030d4f;
+}
+
+.contenedorAcciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 50%;
+}
+.acciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  padding: 15px;
+}
+.acciones label {
+  color: black;
+  font-size: 2em;
+}
+.acciones input {
+  font-size: 2em;
+  width: 30%;
+  background-color: #172b4d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.acciones button {
+  background-color: aliceblue;
+  width: 15%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #030d4f;
+}
+.acciones button:hover {
+  background-color: #1c2560;
+  color: aliceblue;
+  border-color: #030d4f;
+}
+
+.valorDolar {
+  width: 100%;
+}
+.valorDolar p {
+  font-size: 25px;
+}
+.valorDolar p span {
+  color: #0052cc;
+}
+
+.contenedorMovimientos {
+  height: 30%;
+}
+
+.movimientos {
+  width: 90%;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.movimientoPositivo, .movimientoNegativo {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 15px;
+  padding: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(98deg, rgb(2, 0, 36) 0%, rgb(3, 13, 64) 35%, rgba(0, 212, 255, 0) 100%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: aliceblue;
+}
+.movimientoPositivo h4, .movimientoNegativo h4 {
+  color: green;
+}
+
+.movimientoNegativo h4 {
+  color: #FB0C06;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: #172b4d;
+}
+
+.contenedorInactivo {
+  display: none !important;
+}/*# sourceMappingURL=estilos.css.map */

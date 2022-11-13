@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav {
+    background-color: #efefef;
+    height: 100px;
+}
+
+.logo {
+    height: auto;
+    width: 150px;
+}
+
+.bars {
+
+    color: #0052cc;
+    font-size: 25px;
+}
+
+.canvas {
+    background-color: #efefef;
+    color: #0052cc;
+
+    ul {
+        li {
+            a {
+                color: #0052cc !important;
+            }
+
+        }
+    }
+}
+
+.dropMenu {
+    background-color: #efefef;
+
+}
+
+.contenedorInicioRegistro {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: url("../multimedia/inicio.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorInicioSesion {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+
+.contenedorSesionIniciada {
+    @include flex(column, space-between, center);
+    width: 60%;
+    height: 500px;
+    background-color: #00000080;
+    padding-bottom: 30px;
+
+    p {
+
+        font-size: 3em;
+
+        span {
+            /*font-size: 1em;*/
+        }
+    }
+
+    a {
+        padding: 1em;
+        margin-top: 40px;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            background-color: #FB0C06;
+            box-shadow: 0px 15px 20px #a80300;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+
+
+    }
+}
+
+.contenedorRegistroSesion {
+    @extend .contenedorInicioSesion;
+}
+
+.contenedorSesionIniciadaInactivo {
+    display: none;
+}
+
+.contenedorInicioSesionInactivo {
+    display: none;
+}
+
+.contenedorInactivo {
+    display: none;
+}
+
+.contenedorRegistroSesionInactivo {
+    @extend .contenedorInicioSesion;
+    justify-content: space-evenly;
+    background-color: #efefefa6;
+    background-image: url("../multimedia/fondoRegistro.png");
+    background-size: cover;
+
+    img {
+        width: 50%;
+    }
+
+    p {
+        font-size: 25px;
+        color: white;
+    }
+
+    div {
+        @include flex(column, center, center);
+    }
+}
+
+.contenedorRegistroSesionActive {
+    display: flex;
+    @extend .contenedorInicioSesion;
+}
+
+.contenedorFormulario {
+    width: 50%;
+    background-color: #efefefa6;
+    height: 50%;
+    box-sizing: border-box;
+
+}
+
+.contenedorTituloSesion {
+    font-size: 30px;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    background-color: #0052cc;
+    color: aliceblue;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formulario {
+    width: 100%;
+    @include flex(column, flex-start, center);
+    height: 80%;
+}
+
+.contenedorLabelInput {
+    width: 50%;
+
+    label {
+        color: #172b4d;
+    }
+
+    input {
+        width: 100%;
+        color: #172b4d;
+        background-color: rgba(240, 248, 255, 0.336);
+        border: none;
+        border-radius: 10rem;
+        margin: auto;
+
+        &:focus {
+            color: #172b4d;
+            background-color: rgba(240, 248, 255, 0.336);
+            border: 2px solid #0052cc;
+            box-shadow: none;
+        }
+    }
+}
+
+.botonIniciarRegistrarse {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    border: none;
+    color: #0052cc;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 10rem;
+        z-index: -2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken(white, 15%);
+        transition: all .3s;
+        border-radius: 10rem;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #172b4d;
+
+        &:before {
+            width: 100%;
+        }
+    }
+}
+
+.botonInicioRegistro {
+    @extend .botonIniciarRegistrarse;
+    text-transform: capitalize;
+    letter-spacing: normal;
+    padding: 7px 1.25rem;
+
+    margin-top: 20px;
+
+    &:before {
+        background-color: #0052cc;
+    }
+
+    &:hover {
+        color: #efefef;
+    }
+
+}
+
+.contenedor {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: whitesmoke;
+    @include flex(column, center, center);
+    font-family: 'Roboto', sans-serif;
+}
+.contenedorWallet{
+    @extend .contenedor;
+    @include flex(row,flex-start,center);
+    padding: 0px 20px;
+    
+}
+
+
+
+
+.menu{
+    @include flex(column,flex-start,center);
+    width:300px;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #ddd;
+    padding: 15px;
+}
+.contenedorUsuario{
+    @include flex(row,flex-start ,center );
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.61) ;
+    padding-bottom: 10px;
+    img{
+        height: 100%;
+        width: auto;
+        margin-right: 5px;
+    }
+    p{
+        margin: 0px;
+        font-weight: bold;
+    }
+}
+.contenedorOpciones{
+    @include flex(column, space-around, flex-start);
+    width: 100%;
+    height:  40%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.61) ;
+}
+.contenedorOpcion{
+    width: 90%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+    button{
+        width: fit-content;
+        font-size: 20px;
+        background-color:#ddd ;
+        border: none;
+        margin-bottom: 10px;
+        transition: all .3s;
+        &:hover{
+            transition: all .3s;
+            transform: scale(1.1);
+        }
+    }
+    
+}
+.iconoOpcion{
+    width: 40px;
+    height: auto;
+    margin-right: 10px; 
+}
+
+.wallet{
+    @include flex(column, flex-start,flex-start );
+    width: 80%;
+    height: 100%;
+    padding: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+
+}
+.contenedorSaldoAcciones {
+    @include flex(row, flex-start, flex-start);
+    width: 100%;
+    height: 50%;
+    border: 2px solid black;
+    
+}
+
+.contenedorSaldo {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    height: fit-content;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+}
+
+.saldo {
+    @include flex(row, center, center);
+
+    p {
+        font-size: 4em;
+        color: #172b4d;
+        text-shadow: 2px 1px 0px #7A7A7A
+    }
+}
+.pesosDolares{
+    button{
+        transition: all .3s;
+        border: none;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 2px solid grey;
+        border-radius: 10px;
+    }
+}
+.botonSeleccionado{
+    transition: all .3s;
+    border-color: #0052cc!important;
+    transform: scale(1.1)
+}
+
+
+
+.botonAcciones {
+    @extend .botonInicioRegistro;
+    background-color: #030d4f;
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &:hover {
+        background-color: #030d4fc2;
+        color: aliceblue;
+        border-color: #030d4f;
+    }
+}
+
+.contenedorAcciones {
+    @include flex(column, flex-start , flex-start);
+    width: 100%;
+    height: 50%;
+    h3{
+        
+    }
+}
+ 
+.acciones {
+    @include flex(column, center, center);
+    width: 100%;
+    height: 90%;
+    padding: 15px;
+
+
+    label {
+        color: black;
+        font-size: 2em;
+    }
+
+    input {
+        font-size: 2em;
+        width: 30%;
+        background-color:#172b4d;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+
+    button {
+        @extend .botonInicioRegistro;
+        background-color: aliceblue;
+        width: 15%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: #030d4f;
+
+        &:hover {
+            background-color: #1c2560;
+            ;
+            color: aliceblue;
+            border-color: #030d4f;
+        }
+    }
+}
+.valorDolar{
+    width: 100%;
+    p{
+        font-size: 25px;
+        span{
+            color: #0052cc;
+        }
+    }
+}
+
+.contenedorMovimientosInversiones {
+    @extend .contenedorSaldoAcciones;
+}
+
+.contenedorMovimientos {
+    @extend .contenedorSaldo;
+    height: 30%;
+}
+
+.movimientos {
+    width: 90%;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.movimientoPositivo {
+    width: 90%;
+    height: fit-content;
+    margin: 15px;
+    padding: 10px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(98deg, rgba(2, 0, 36, 1) 0%, rgba(3, 13, 64, 1) 35%, rgba(0, 212, 255, 0) 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: aliceblue;
+
+    h4 {
+        color: green;
+    }
+}
+
+.movimientoNegativo {
+    @extend .movimientoPositivo;
+
+    h4 {
+        color: #FB0C06;
+    }
+
+
+}
+
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #172b4d;
+}
+
+.contenedorInactivo {
+    display: none !important;
+}
