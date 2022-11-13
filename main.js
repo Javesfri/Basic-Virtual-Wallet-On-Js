@@ -7,12 +7,15 @@
 
 //2)Registrar usuarios (Nombre,mail,contraseña)
 
-//3)Las cuentas inician con $3000 Se puede Agregar Dinero, Retirar Dinero,
-//  y enviar dinero a otras cuentas registradas a traves del mail.
+//3)Las cuentas inician con AR$3000 y U$D100. Se puede Agregar Dinero, Retirar Dinero,
+//  , enviar dinero a otras cuentas registradas a traves del mail y comprar Dolares.
 
-//4) Tiene un pequeño historial de movimientos.
+//4)Las operaciones se pueden efectuar con la cuenta de pesos o la de dolares, segun cual seleccione.
 
-//5) Tiene un visor del saldo actual que se actualiza segun los movimientos que se hagan.
+//5) Tiene un visor del saldo actual que se actualiza segun los movimientos que se hagan. El visor cambia
+//  segun el tipo de cuenta seleccionado(dolar o peso).
+//6) Tiene un pequeño historial de movimientos.
+
 
 
 
